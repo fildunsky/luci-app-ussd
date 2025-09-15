@@ -1,9 +1,6 @@
 module("luci.controller.ussd", package.seeall)
 
 function index()
-    local s = entry({"admin", "services", "ussd"}, call("action_index"), _("USSD"), 60)
-    s.acl_depends = { "luci-app-ussd" }
-
     local m = entry({"admin", "modem", "ussd"}, call("action_index"), _("USSD"), 60)
     m.acl_depends = { "luci-app-ussd" }
 end
