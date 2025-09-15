@@ -1,0 +1,20 @@
+{
+    "luci-app-ussd": {
+        "description": "Grant LuCI access to USSD app",
+        "read": {
+            "ubus": {
+                "uci": [ "get", "list" ]
+            }
+        },
+        "write": {
+            "ubus": {
+                "uci": [ "set", "add", "commit" ]
+            },
+            "file": {
+                "/": [ "write" ]
+            }
+        }
+    }
+}
+
+

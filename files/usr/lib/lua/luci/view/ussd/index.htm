@@ -1,0 +1,27 @@
+<%+header%>
+<h2><%:USSD%></h2>
+
+<form method="post" class="inline-form">
+	<div class="cbi-section">
+		<div class="cbi-value">
+			<label class="cbi-value-title" for="code"><%:USSD command%></label>
+			<div class="cbi-value-field">
+				<input type="text" id="code" name="code" value="<%=pcdata(code or "")%>" placeholder="*100#" />
+			</div>
+		</div>
+		<div class="cbi-value">
+			<label class="cbi-value-title">&nbsp;</label>
+			<div class="cbi-value-field">
+				<input class="cbi-button cbi-button-apply" type="submit" value="<%:Отправить%>" />
+			</div>
+		</div>
+	</div>
+</form>
+
+<% if output then %>
+	<h3><%:Response%></h3>
+	<pre><%=pcdata(output)%></pre>
+<% end %>
+
+<%+footer%>
+
